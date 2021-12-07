@@ -11,22 +11,31 @@
 
 import random
 
-intp1 = int(input("Enter your First number: "))
-intp2 = int(input("Enter your Second number: "))
-intp3 = int(input("Enter your Third number: "))
-
-
 def Wnumbers():
+    intp1 = int(input("Enter your First number: "))
+    intp2 = int(input("Enter your Second number: "))
+    intp3 = int(input("Enter your Third number: "))
+
     num1 = random.randint(0,9)
     num2 = random.randint(0,9)
     num3 = random.randint(0,9)
-    user = (intp1 or intp2 or intp3)
-    win = (num1 or num2 or num3)
+    user = (intp1, intp2, intp3)
+    win = (num1, num2, num3)
     lose = (num1, num2, num3)
     if  user == win:
         print("You, Win")
+        print(win)
     else:
         print("You, Lose")
         print(f"Lottery Number are {lose}.")
 
+def Play():
+    play = input("You want to continue Y/N?\n")
+    if play == ("Y") or ("y") or ("YES") or ("Yes") or ("yes"):
+        print(Wnumbers())
+        print(Play(),Play(),Play(),Play(),Play(),Play(),Play(),Play(),Play(),Play(),Play())
+    else:
+        print("Done")
 Wnumbers()
+Play()
+
