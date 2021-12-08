@@ -10,15 +10,18 @@ import random
 user = int(input("Enter you Guess Number here: "))
 randNum = random.randint(0,100)
 
-while randNum in user:
+while randNum != user:
     if user > randNum:
-        print("Your Guess is Greater than the random number.\n Try Decreasing your inputed Number")
-        user = int(input("Enter another Guess Number here:"))
+        print("\nYour Guess is Greater than the random number.\n Try Decreasing your inputed Number")
+        user = int(input("\nEnter another Guess Number here: \n"))
         if user == randNum:
             print("You Guessed the Number correctly")
             print(f"The random Number is {randNum}.")
             break
     elif user < randNum:
-        print("Your Guess is Less than the random number.\n Try Increasing your inputed Number")
-        user = int(input("Enter another Guess Number here:"))
-        
+        print("\nYour Guess is Less than the random number.\n Try Increasing your inputed Number")
+        user = int(input("\nEnter another Guess Number here: \n"))
+        if user == randNum:
+            print("You Guessed the Number correctly")
+            print(f"The random Number is {randNum}.")
+            break
